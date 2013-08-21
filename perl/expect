@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+use Expect;
+$Expect::Log_Stdout = 1;
+
+#$ENV{TERM} = "vt100";
+
+my ($host,$pass) = ("",'');
+my $exp = Expect->new;
+$exp = Expect->spawn("ssh -l root $host");
+$exp->log_stdout(1);
+$exp->log_file("output.log", "w");
+$exp->expect(2,[
+	qr/password:/i,
+	sub {
+		my $self = shift ;
+		$self->send("$pass\n");
+		exp_continue;
+	}
+],
+[
+	'connecting (yes/no)',
+	sub {
+		my $self = shift ;
+		$self->send("yes\n");
+	}
+]
+);
+#$exp->interact() if ($exp->expect(undef,'#'));
+$exp->send("ls -l\n") if ($exp->expect(undef,'[root@localhost ~]#'));
+if($exp->expect(undef,'#'))
+{
+#	#$exp->send("ls -l\n");
+}
+#$exp->send("exit\n") if ($exp->expect(undef,'#'));
+$exp->log_file(undef);
