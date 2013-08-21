@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use LWP;
+
+my $browser=LWP::UserAgent->new();
+my $req=HTTP::Request->new(GET => 'http://localhost');
+#my $response=$browser->get("http://localhost");
+#$req->content_type=('appliation/x-www-form-urlencoded');
+#$req->content("query=libwww-perl&mode=dist");
+print $req->content;
+my $res=$browser->request($req);
+
+#print $res->content;
+
+

@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+my $quit;
+
+$SIG{TERM}=$SIG{INT}= sub {$quit++;};
+while(1)
+{
+	print $quit
+};

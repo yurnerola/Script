@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use Getopt::Std;
+
+my %opts;
+
+getopts("version|v:",\%opts) or die "wrong--";
+
+print "--\n" if defined $opts{v};
+print "version\n" if defined $opts{version};

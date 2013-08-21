@@ -1,0 +1,3 @@
+#!/usr/bin/perl
+my $pid=2927;
+die "Server already running with PID $pid" if kill 0 => $pid;

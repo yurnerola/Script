@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+
+open f1,"<log";
+my @line=<f1>;
+print @line;

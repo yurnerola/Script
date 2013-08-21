@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $developer = 'Thompson';
+my @names = qw(Kernighan Ritchie Pike $developer);
+foreach my $name (@names) {
+	print "name: $name\n";
+}

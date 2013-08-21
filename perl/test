@@ -1,0 +1,3 @@
+#!/usr/bin/perl
+use warnings;
+require("myperl.pl");

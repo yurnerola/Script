@@ -1,0 +1,26 @@
+#!/usr/bin/perl -w
+
+use strict;
+use Net::OpenSSH;
+
+my $hostname='183.136.132.47';
+my $user='root';
+my $passphrase='5X2lSGr@B9iNS5fn!5rIcx,MG67.DE';
+my $key='/root/.ssh/id_rsa';
+
+my %param=(
+	user => $user,
+	passphrase => $passphrase,
+	key_path => $key,
+	timeout =>30
+);
+
+my $ssh=Net::OpenSSH->new($hostname,%param);
+
+my $cmd='ls -l';
+
+my @out=$ssh->capture2($cmd);
+
+print "@out";
+
+
