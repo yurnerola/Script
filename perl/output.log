@@ -1,0 +1,36 @@
+root@183.136.132.47's password: 
+Last login: Wed Aug 21 17:43:20 2013 from 106.120.218.226
+			#################################################
+			#						#
+			#	Welcome login SinaShow ChatSyetem	#
+			#	Don't  illegal login   the Server	#
+			#	CopyRight (C) SinaShow ChatServer	#
+			#	Contact Email: showit@sinashow.com	#
+			#						#
+			#################################################
+
+]0;root@localhost:~[root@localhost ~]# ls -l
+[00mtotal 82472
+drwxr-xr-x 8 root root     4096 Nov 23  2012 [00;34mChatServer[00m
+drwxr-xr-x 3 root root     4096 Nov  7  2012 [00;34mPING[00m
+-rw-r--r-- 1 root root        0 Aug 15 12:28 [00mdst[00m
+-rw-r--r-- 1 root root     1325 Nov  5  2012 [00;32meth2cpu.sh[00m
+-rw-r--r-- 1 root root    32060 Jun 29  2011 [00minstall.log[00m
+-rw-r--r-- 1 root root     4568 Jun 29  2011 [00minstall.log.syslog[00m
+-rw-r--r-- 1 root root      908 Jun 26 16:51 [00;32minstall_kill_hall.sh[00m
+drwxr-xr-x 3 root root     4096 Mar 30  2012 [00;34mlogs[00m
+drwxr-xr-x 3 root root     4096 Jul 25  2012 [00;34mmachine[00m
+drwxr-xr-x 8 1000 1000     4096 Jun 29  2011 [00;34mnginx-0.8.46[00m
+drwxr-xr-x 8 1169 1169     4096 Jun 29  2011 [00;34mpcre-8.02[00m
+-rw-r--r-- 1 root root      415 Aug 13 17:05 [00mprint.pl[00m
+-rwxr-xr-x 1 root root     8235 Aug  9 13:01 [00;32mresolvdns_32[00m
+-rw-r--r-- 1 root root 76800986 Aug 21 17:43 [00mresult[00m
+-rwxr-xr-x 1 root root      307 Nov  5  2012 [00;32mroute.sh[00m
+-rw------- 1 root root       19 Mar 26  2012 [00mrsyncd.secrets[00m
+drwxr-xr-x 2 root root     4096 Apr 19  2012 [00;34msh[00m
+-rw-r--r-- 1 root root  6364970 Aug 13 17:06 [00mshowsina[00m
+-rw-r--r-- 1 root root  1063957 Aug 13 17:06 [00msinashow[00m
+drwxr-xr-x 2 root root     4096 Aug  1 17:04 [00;34msoftware[00m
+-rw-r--r-- 1 root root        0 Aug 20 14:44 [00msrc[00m
+drwxr-xr-x 3 root root     4096 Jul 25  2012 [00;34mtools[00m
+[m]0;root@localhost:~[root@localhost ~]# 
