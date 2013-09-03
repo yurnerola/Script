@@ -3,11 +3,14 @@ import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("Hello, world")
+        self.write("Hello, world\n")
+        self.write(self.request.arguments)
+        self.write("\n")
+        self.write(self.request.path+"\n")
 
 
 application = tornado.web.Application([
-    (r"/", MainHandler),
+    (r"/helloworld", MainHandler),
 ])
 
 
