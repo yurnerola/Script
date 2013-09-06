@@ -28,8 +28,40 @@ if ($response->content  =~ /hall_property=(\d+)\n/)
 
 my $gas_ip=pinfo($response->content,"gas_ip");
 my $gas_id=pinfo($response->content,"gas_id");
+my $hall_pwd=pinfo($response->content,"hall_pwd");
+my $hall_property=pinfo($response->content,"hall_property");
+my $hall_property2=pinfo($response->content,"hall_property2");
 
-print "Hallid:$opt_i --- IP:$gas_ip\n\n";
+
+print "房间号:$opt_i\n";
+print "CRS所在服务器IP: $gas_ip ;gas_id: $gas_id \n";
+
+
+print "房间类型为：好声音\n" if $hall_property2&0x00000040;
+print "房间类型为：开心果\n" if $hall_property2&0x00000080;
+print "房间类型为：网舞\n"   if $hall_property2&0x00000100;
+print "房间类型为：同城\n"   if $hall_property2&0x00000200;
+
+if ($hall_property&0x00000001)
+{
+	print "是否支持锁:是\n";  
+}
+else
+{
+	print "是否支持锁:否\n"; 
+}
+
+if($hall_property&0x00000002)
+{
+	print "当前锁状态:已锁;密码为:$hall_pwd\n";
+}
+else
+{
+	print "当前锁状态:未锁\n";
+}
+
+#print "是否支持自动锁:是\n";
+
 
 print "-----Shell-----\n";
 my $shell=<<EOF;
