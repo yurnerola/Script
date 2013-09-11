@@ -13,7 +13,7 @@ db=client["test"]
 collection=db.person
 #print collection.find_one({"name":"jack"})
 
-post={"author":"Mike","text":"My First blog post!","tags":["mongdb","python","pymongo"],"date":datetime.datetime.utcnow()}
+post={"author":"LiuBin","text":"My First blog post!","tags":["mongdb","python","pymongo"],"date":datetime.datetime.utcnow()}
 
 
 posts=db.posts

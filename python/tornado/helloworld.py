@@ -16,9 +16,12 @@ class ProfileHandler(tornado.web.RequestHandler):
 
 	def get(self,username):
 		print username
-        print self.database
+		print self.database
 
 class PostHandler(tornado.web.RequestHandler):
+    '''
+        curl -d "{\"type\":\"user_list\",\"uid_list\":[10622,10888,10010]}" http://localhost:8888/post
+    '''
     def get(self):
         print self.request.body
         print self.request
@@ -26,7 +29,13 @@ class PostHandler(tornado.web.RequestHandler):
         dic = {}
         dic = eval(self.request.body)
         #self.write(self.request.body)
-        self.write(dic)
+        uid_list=dic["uid_list"]
+        sort_list=dic["uid_list"]
+        sort_list.sort()
+        for uid in uid_list:
+            self.write(str(uid)+"\n")
+        for uid in sort_list:
+            self.write(str(uid)+"\n")
 
 
 application = tornado.web.Application([

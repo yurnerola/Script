@@ -21,7 +21,7 @@ class ErrorHandler(tornado.web.RequestHandler):
 		raise tornado.web.HTTPError(403)
 
 application = tornado.web.Application([
-    (r"/", MainHandler),
+	(r"/", MainHandler),
 	(r"/story/([0-9]+)",StoryHandler),
 	(r"/post",PostHandler),
 	(r"/error",ErrorHandler)
