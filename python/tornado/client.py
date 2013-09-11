@@ -12,8 +12,8 @@ def str_to_dict(body):
 	dict={}
 	for match in pattern.finditer(body):
 		dict[match.group(1)]=match.group(2)
-	print dict["hall_id"]
-	#	print match.group()
+	return dict
+	#print match.group()
 
 if len(sys.argv)<2:
 	com.usage()
@@ -25,8 +25,8 @@ except httpclient.HTTPError as e:
 	print "Error:",e
 #print response.body
 body=response.body
-str_to_dict(body)
+dict=str_to_dict(body)
 
-
+print dict["hall_id"]
 http_client.close()
 
