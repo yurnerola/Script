@@ -8,12 +8,12 @@ from  tornado.httpclient import HTTPClient
 http_client=HTTPClient()
 
 def str_to_dict(body):
-	pattern = re.compile('(.*)=(.*)\n')
+	pattern = re.compile('(.*?)=(.*)\n')
 	dict={}
 	for match in pattern.finditer(body):
-	# 	dict[match.group(1)]=match.group(2)
-	# print dict
-		print match.group()
+		dict[match.group(1)]=match.group(2)
+	print dict["hall_id"]
+	#	print match.group()
 
 if len(sys.argv)<2:
 	com.usage()
