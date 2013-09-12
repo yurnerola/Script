@@ -1,11 +1,7 @@
 #!/usr/bin/python
-import sys
 import re
-import com
+import tornado.httpclient
 
-from  tornado.httpclient import HTTPClient
-
-http_client=HTTPClient()
 
 def str_to_dict(body):
 	pattern = re.compile('(.*?)=(.*)\n')
@@ -13,20 +9,16 @@ def str_to_dict(body):
 	for match in pattern.finditer(body):
 		dict[match.group(1)]=match.group(2)
 	return dict
-	#print match.group()
 
-if len(sys.argv)<2:
-	com.usage()
-	exit(0)
-
-try:
-	response=http_client.fetch("http://123.103.108.94:18010/fcgi_bin/get_hall_info.fcgi?id="+sys.argv[1])
-except httpclient.HTTPError as e:
-	print "Error:",e
-#print response.body
-body=response.body
-dict=str_to_dict(body)
-
-print dict["hall_id"]
-http_client.close()
+def get_dict(hall):
+	http_client=tornado.httpclient.HTTPClient()
+	try:
+		response=http_client.fetch("http://123.103.108.94:18010/fcgi_bin/get_hall_info.fcgi?id="+hall)
+	except tornado.httpclient.HTTPError as e:
+		print "Error:",e
+	#print response.body
+	body=response.body
+	dict=str_to_dict(body)
+	http_client.close()
+	return dict
 

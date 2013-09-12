@@ -1,14 +1,14 @@
 import re;
 
 def usage():
-	print '''
-	Usage:
-		logger [options]
+	return  '''
+	Usage:<br/>
+		logger [options]<br/>
 
-	Options:
-		-h              Print this usage.
-		-i <hallid>
-	Example:
+	Options:<br/>
+		-h              Print this usage.<br/>
+		-i <hallid><br/>
+	Example:<br/>
 		logger -i 447283
 	'''
 
