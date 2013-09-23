@@ -21,4 +21,3 @@ def get_dict(hall):
 	dict=str_to_dict(body)
 	http_client.close()
 	return dict
-

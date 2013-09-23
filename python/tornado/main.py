@@ -3,6 +3,7 @@ import tornado.ioloop
 import tornado.web
 import client
 import re
+from urllib import unquote
 
 class HallinfoHandler(tornado.web.RequestHandler):
 	def get(self):
@@ -17,12 +18,12 @@ class HallinfoHandler(tornado.web.RequestHandler):
 				hall_property=int(dict["hall_property"])
 				hall_property2=int(dict["hall_property2"])
 				str_property=dict["str_property"]
-				pattern=re.compile(r'area:(.*)#(.*)')
-				match=pattern.match(str_property)
-				if match:
-					hall_city=match.group(1)
-					hall_time=match.group(2)
-
+				#pattern=re.compile(r'area:(.*)#(.*)')
+				#match=pattern.match(str_property)
+				#if match:
+				#	hall_city=match.group(1)
+				hall_time=unquote(str_property).decode("gbk").encode("utf-8")
+				print hall_time
 
 				self.write("房间号："+dict["hall_id"]+"<br/>")
 				self.write("CRS所在服务器ID："+dict["gas_id"]+"<br/>")
@@ -40,7 +41,7 @@ class HallinfoHandler(tornado.web.RequestHandler):
 					self.write("送礼时间段为："+hall_time+"<br/>")
 				elif hall_property2&0x00000200:
 					self.write("房间类型为：同城"+"<br/>")
-					self.write("同城属性为："+hall_city+"<br/>")
+					#self.write("同城属性为："+hall_city+"<br/>")
 					self.write("送礼时间段为："+hall_time+"<br/>")
 
 				else:

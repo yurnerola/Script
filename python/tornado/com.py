@@ -15,7 +15,6 @@ def usage():
 
 if __name__=="__main__":
 	m=re.match(r'(\w+) (\w+)(?P<sign>.*)','hello world!')
-
 	print "m.string:",m.string
 	print "m.re:",m.re
 	print "m.pos:",m.pos
@@ -42,6 +41,6 @@ if __name__=="__main__":
 	# print p.sub(r'\2 \1',s)
 
 	def func(m):
-	    return m.group(1).title() + ' ' + m.group(2).title()
+		return m.group(1).title() + ' ' + m.group(2).title()
 
 	print p.sub(func, s)
